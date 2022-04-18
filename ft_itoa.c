@@ -31,7 +31,7 @@ char	*ft_itoa(int a)
 		str = (char *)malloc(sizeof(char) * (len + 2));
 		if (!str)
 			return (NULL);
-		memset(str,'\0', len + 1);
+		memset(str,'\0', len + 2);
 	}
 	while(*(str + pos))
 		pos++;
@@ -56,7 +56,7 @@ int	main(void)
 {
 
 	char *num;
-	int a = -12;
+	int a = -100;
 	num = ft_itoa(a);
 	printf("%d\n",a);
 	printf("%s\n", num);
