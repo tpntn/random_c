@@ -22,8 +22,8 @@ int		ft_numlen(int a)
 char	*ft_itoa(int a)
 {
 	static char	*str;
-	int	pos = 0;
-	int len;
+	int			pos;
+	int			len;
 
 	len = ft_numlen(a);
 	if (!str)
@@ -33,6 +33,7 @@ char	*ft_itoa(int a)
 			return (NULL);
 		memset(str,'\0', len + 2);
 	}
+	pos = 0;
 	while(*(str + pos))
 		pos++;
 	if (a < 0)
