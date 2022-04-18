@@ -23,12 +23,15 @@ char	*ft_itoa(int a)
 {
 	static char	*str;
 	int	pos = 0;
+	int len;
+
+	len = ft_numlen(a);
 	if (!str)
 	{
-		str = (char *)malloc(sizeof(char) * ft_numlen(a) + 1);
+		str = (char *)malloc(sizeof(char) * (len + 2));
 		if (!str)
 			return (NULL);
-		memset(str,'\0',ft_numlen(a) + 1);
+		memset(str,'\0', len + 1);
 	}
 	while(*(str + pos))
 		pos++;
@@ -53,12 +56,10 @@ int	main(void)
 {
 
 	char *num;
-	int a = -2000000;
+	int a = -12;
 	num = ft_itoa(a);
 	printf("%d\n",a);
-	//printf("%s\n", num);
-	for (int i = 0; *(num + i) != '\0'; i++)
-			write(1,num,1);
+	printf("%s\n", num);
 	free(num);
 	return (0);
 }
