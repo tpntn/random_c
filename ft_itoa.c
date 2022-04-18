@@ -22,8 +22,8 @@ int		ft_numlen(int a)
 char	*ft_itoa(int a)
 {
 	static char		*str;
-	int						pos;
-	int						len;
+	int				pos;
+	int				len;
 
 	len = ft_numlen(a);
 	if (!str)
